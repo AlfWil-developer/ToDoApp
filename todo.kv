@@ -1,0 +1,66 @@
+Interface:
+    Screen:
+        name: 'Main Screen'
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: dp(15)
+            spacing: dp(30)
+
+            Label:
+                text: 'To Do App'
+                font_size: '32sp'
+                font_name: 'keaniaone-regular.ttf'
+                size_hint: 1, None
+                height: dp(80)
+
+            ScrollView:
+                do_scroll_y: True
+
+                GridLayout:
+                    id: gridlayout
+                    cols: 1
+                    spacing: dp(10)
+                    size_hint_y: None
+                    height: self.minimum_height
+
+
+
+            Button:
+                background_normal: ''
+                background_color: (0.329, 0.157, 0.647, 1)
+                text: "Add"
+                font_size: '28sp'
+                font_name: 'keaniaone-regular.ttf'
+                size_hint: 1, None
+                height: dp(60)
+                on_press: root.show_popup()
+
+    Screen:
+        name: 'Details Screen'
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: dp(15)
+            spacing: dp(25)
+
+            Label:
+                id: notice_titles
+                text: 'Notice Title'
+                font_name: 'keaniaone-regular.ttf'
+                size_hint_y: None
+                height: dp(80)
+
+            TextInput:
+                id: input_data
+                font_name: 'keaniaone-regular.ttf'
+
+            CustomBtn:
+                background_normal: ''
+                background_color: (0.329, 0.157, 0.647, 1)
+                size_hint_y: None
+                height: dp(80)
+                text: 'Back'
+                font_size: '28sp'
+                font_name: 'keaniaone-regular.ttf'
+                on_press: root.back()
